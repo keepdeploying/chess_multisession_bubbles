@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chess_board/flutter_chess_board.dart';
 import 'package:flutter_chessbot_ai/stockfish_manager.dart';
 
-
 class MoveRequest {
   final String fen;
   final String gameId;
@@ -14,7 +13,11 @@ class MoveRequest {
 }
 
 class Game extends StatefulWidget {
-  const Game({super.key, required this.title, required this.instanceId});
+  const Game({
+    super.key,
+    required this.title,
+    required this.instanceId,
+  });
 
   final String title;
   final String instanceId;
@@ -88,7 +91,6 @@ class _GameState extends State<Game> {
   //     }
   //   });
   // }
-
 
   Future<void> generateAIMove() async {
     final currentPosition = controller.getFen();
